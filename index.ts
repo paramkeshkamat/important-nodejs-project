@@ -1,20 +1,20 @@
-import express from "express";
+import express, { Express, Request, Response } from "express";
 import cors from "cors";
 import morgan from "morgan";
 import dotenv from "dotenv";
 
-const app = express();
+const app: Express = express();
 dotenv.config();
 
 app.use(express.json());
 app.use(cors());
 app.use(morgan("tiny"));
 
-app.get("/", (req, res) => {
+app.get("/", (req: Request, res: Response) => {
   res.status(200).send("Super Important NodeJS Project 😲🔥");
 });
 
-app.route("/important-route", (req, res) => {
+app.get("/important-route", (req: Request, res: Response) => {
   res.status(200).json({
     data: "Very important data 🤫",
   });
