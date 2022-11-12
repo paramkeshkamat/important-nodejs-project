@@ -21,7 +21,7 @@ describe("Sample tests", () => {
   describe("GET /important-route", () => {
     test("should return 200 on success", async () => {
       const response = await request(app).get("/important-route").send();
-      expect(response.statusCode).toBe(555);
+      expect(response.statusCode).toBe(200);
       expect(response.body).toHaveProperty("data");
       expect(response.headers["content-type"]).toContain("application/json");
     });
