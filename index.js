@@ -14,5 +14,11 @@ app.get("/", (req, res) => {
   res.status(200).send("Super Important NodeJS Project 😲🔥");
 });
 
+app.route("/important-route", (req, res) => {
+  res.status(200).json({
+    data: "Very important data 🤫",
+  });
+});
+
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => console.log(`Server listening to port ${PORT}`));
